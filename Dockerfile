@@ -47,12 +47,6 @@ RUN cd /tmp \
   && mv cnijfilter2-6.80-1-deb/packages/cnijfilter2_6.80-1_${ARCH}.deb cnijfilter2_6.80-1.deb \
   && apt install ./cnijfilter2_6.80-1.deb
 
-COPY brmfc7440nlpr-2.0.2-1.i386.deb ./brmfc7440nlpr-2.0.2-1.i386.deb
-COPY cupswrapperMFC7440N-2.0.2-1.i386.deb ./cupswrapperMFC7440N-2.0.2-1.i386.deb
-RUN ln -s /etc/init.d/cups /etc/init.d/lpd && mkdir /var/spool/lpd
-RUN dpkg  -i  --force-all ./brmfc7440nlpr-2.0.2-1.i386.deb
-RUN dpkg  -i  --force-all ./cupswrapperMFC7440N-2.0.2-1.i386.deb
-
 COPY rootfs /
 
 # Add user and disable sudo password checking
